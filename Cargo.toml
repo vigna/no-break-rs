@@ -1,0 +1,11 @@
+[package]
+name = "no-break"
+version = "0.1.0"
+license = "Apache-2.0 OR LGPL-2.1-or-later"
+readme = "README.md"
+edition = "2021"
+repository = "https://github.com/vigna/no-break-rs"
+description = "Extraction of continuation values from unbreakable control flows"
+keywords = ["unbreakable", "never-type"]
+categories = ["rust-patterns"]
+authors = ["Sebastiano Vigna <sebastiano.vigna@gmail.com>"]
