@@ -1,9 +1,9 @@
 # Typesafe Extraction of Continuation Values from Unbreakable Control Flows
 
-This crate provides a convenience trait [`NoBreak`], adding a method
-[`continue_value_no_break`] to [`ControlFlow`] types whose [break variant] is
-[`Unbreakable`]. The purpose is identical to that of the [`unwrap_infallible`]
-crate, but for control flows.
+This crate provides a convenience trait [`NoBreak`] adding a method
+[`continue_value_no_break`] to [`ControlFlow`] types in which the type of the
+value contained in the [break variant] is [`Unbreakable`]. The purpose is
+identical to that of the [`unwrap_infallible`] crate, but for control flows.
 
 [`Unbreakable`] is a marker type similar to [`Infallible`] (it is an empty
 enum), but with a different name as breaks in a control flow are not

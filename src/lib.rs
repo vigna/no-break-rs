@@ -10,18 +10,15 @@ use core::ops::ControlFlow;
 
 /// A [`ControlFlow::Break`] type that can never happen.
 ///
-/// This enum has the same purpose of [`core::convert::Infallible`], but it is
+/// This enum has the same purpose of [`std::convert::Infallible`], but it is
 /// specific to control flows. It should be ultimately replaced by the
 /// [`!`] type if it becomes stable.
 pub enum Unbreakable {}
 
-/// A trait to extract continuation values from control flows that
-/// never break.
+/// A trait to extract continuation values from [control flows](ControlFlow)
+/// that never break.
 ///
-/// This trait is useful to avoid the need to specify the error type when
-/// calling a visit method that cannot be interrupted. It forces a
-/// [`ControlFlow`] to have `Break` variant
-/// [`Infallible`](std::convert::Infallible).
+/// See the [crate documentation](crate) for more information.
 pub trait NoBreak {
     /// The type of the value in the [`Continue`](ControlFlow::Continue)
     /// variant of the control flow.
