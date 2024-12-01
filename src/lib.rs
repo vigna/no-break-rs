@@ -8,7 +8,7 @@
 
 use core::ops::ControlFlow;
 
-/// The [`ControlFlow::Break`] type that can never happen.
+/// A [`ControlFlow::Break`] type that can never happen.
 ///
 /// This enum has the same purpose of [`core::convert::Infallible`], but it is
 /// specific to control flows. It should be ultimately replaced by the
@@ -23,7 +23,8 @@ pub enum Unbreakable {}
 /// [`ControlFlow`] to have `Break` variant
 /// [`Infallible`](std::convert::Infallible).
 pub trait NoBreak {
-    /// Type of the `Continue` variant of the control flow.
+    /// The type of the value in the [`Continue`](ControlFlow::Continue)
+    /// variant of the control flow.
     type Continue;
     /// Returns the continue value of the control flow.
     fn continue_value_no_break(self) -> Self::Continue;
@@ -39,12 +40,4 @@ impl<C> NoBreak for ControlFlow<Unbreakable, C> {
             self.continue_value().unwrap_unchecked()
         }
     }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::NoBreak;
-
-    #[test]
-    fn test() {}
 }
